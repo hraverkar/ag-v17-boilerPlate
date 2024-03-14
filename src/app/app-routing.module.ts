@@ -8,24 +8,24 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    title: "Home"
+    title: 'Home',
   },
   {
     path: 'about',
     component: AboutComponent,
-    title: "About"
+    title: 'About',
   },
   {
     path: 'contact',
     component: ContactComponent,
-    title: "Contact"
+    title: 'Contact',
   },
   {
     path: '',
     component: HomeComponent,
-    title: "Home",
-    pathMatch: 'full'
-  }
+    title: 'Home',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({

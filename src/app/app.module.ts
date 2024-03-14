@@ -14,11 +14,18 @@ import { HomeComponent } from './component/home/home.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { AboutComponent } from './component/about/about.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
-
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, ContactComponent, AboutComponent],
-  imports: [BrowserModule, AppRoutingModule, MaterialModule, CoreModuleModule, NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' })],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MaterialModule,
+    CoreModuleModule,
+    NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
+    ToastrModule.forRoot({ closeButton: true, timeOut: 3000, newestOnTop: true, progressBar: true, positionClass: 'toast-bottom-left'})
+  ],
   providers: [
     provideClientHydration(),
     provideAnimationsAsync(),
