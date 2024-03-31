@@ -1,0 +1,33 @@
+<div class="scrollable-container">
+    <section class="bg-light pt-3 pb-5 shadow-sm">
+        <div class="container">
+            <div class="row pt-3">
+                <div class="col-12">
+                    <h3 class="text-uppercase border-bottom mb-4">Available Project</h3>
+                </div>
+            </div>
+
+            <div class="row d-flex align-items-stretch">
+                <div class="card-group">
+                    <div class="card"
+                        style="flex: 0 0 22%; margin-right: 10px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center;">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Create New Project</h4>
+                            <p class="card-text">Click here to create a new project</p>
+                            <button class="btn btn-secondary" (click)="newProjectCreation()"><i
+                                    class="fa-solid fa-square-plus"></i></button>
+                        </div>
+                    </div>
+                    <div *ngFor="let item of projects" class="card"
+                        style="flex: 0 0 22%; margin-right: 10px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center;">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">{{item.projectName}}</h4>
+                            <p class="card-text">{{item.projectDescription}}</p>
+                            <a class="btn btn-secondary" (click)="OnProjectClick(item.id)">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

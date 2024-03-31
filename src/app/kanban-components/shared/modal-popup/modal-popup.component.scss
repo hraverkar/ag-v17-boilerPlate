@@ -1,0 +1,23 @@
+:host {
+    display: block;
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    width: 600px;
+    height: 320px;
+    animation: custom-dialog-enter 1s ease;
+}
+
+// @keyframes custom-dialog-enter {
+//     from {
+//         transform: scale(0) rotate(180deg);
+//     }
+
+//     to {
+//         transform: none;
+//     }
+// }
+
+.btn-secondary {
+    background-color: #004f4f !important;
+}

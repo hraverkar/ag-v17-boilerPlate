@@ -1,0 +1,31 @@
+<h1>New Task Creation</h1>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" formControlName="taskTitle" placeholder="Task title">
+        <label for="taskTitle">Task Title</label>
+    </div>
+    <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a task description here" formControlName="taskDetail"
+            style="height: 100px"></textarea>
+        <label for="taskDetail">Task Description</label>
+    </div>
+    <div class="form-floating">
+        <mat-form-field>
+            <mat-label>Select Task Status</mat-label>
+            <mat-select [formControl]="taskStatusControl" required>
+                <mat-option>--</mat-option>
+                @for (animal of data; track animal) {
+                <mat-option [value]="animal.id">{{animal.statusName}}</mat-option>
+                }
+            </mat-select>
+            @if (taskStatusControl.hasError('required')) {
+            <mat-error>Please choose an status</mat-error>
+            }
+        </mat-form-field>
+    </div>
+    <hr>
+    <div style="float: right;">
+        <button type="submit" class="btn btn-secondary">Save</button>
+        <button type="button" class="btn btn-secondary" style="margin-left: 15px;" (click)="closeModel()">Close</button>
+    </div>
+</form>

@@ -1,0 +1,17 @@
+<h1>New Project</h1>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" formControlName="projectTitle" placeholder="project title">
+        <label for="projectTitle">Project Title</label>
+    </div>
+    <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a project description here"
+            formControlName="projectDescription" style="height: 100px"></textarea>
+        <label for="projectDescription">Project Description</label>
+    </div>
+    <hr>
+    <div style="float: right;">
+        <button type="submit" class="btn btn-secondary">Save</button>
+        <button type="button" class="btn btn-secondary" style="margin-left: 15px;" (click)="closeModel()">Close</button>
+    </div>
+</form>

@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <div class="logo">
+        <img src="../../../assets/logo/logo.png" alt="logo">
+    </div>
+    <div class="text-center mt-4 name">
+        Register
+    </div>
+    <form class="p-3 mt-3" #userSignup = "ngForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-field d-flex align-items-center">
+            <input type="text" name="email" id="email" placeholder="Email" [(ngModel)]="formData.email">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <input type="text" name="name" id="name" placeholder="Name" [(ngModel)]="formData.name">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <input type="password" name="password" id="pwd" placeholder="Password"  [(ngModel)]="formData.password">
+        </div>
+        <button class="btn mt-3" type="submit">Register</button>
+    </form>
+    <div class="text-center fs-6">
+        <a [routerLink]="['/login']">Login</a>
+    </div>
+</div>

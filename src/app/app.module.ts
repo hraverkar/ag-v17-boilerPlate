@@ -15,21 +15,49 @@ import { ContactComponent } from './component/contact/contact.component';
 import { AboutComponent } from './component/about/about.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastrModule } from 'ngx-toastr';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from '../environments/environment.development';
+import { AuthService } from './services/auth.service';
+import { KanbanBoardProjectComponent } from './kanban-components/kanban-board-project/kanban-board-project.component';
+import { CommonModule } from '@angular/common';
+import { KanbanSingleProjectComponent } from './kanban-components/kanban-single-project/kanban-single-project.component';
+import { ModalPopupComponent } from './kanban-components/shared/modal-popup/modal-popup.component';
+import { AddTaskModalComponent } from './kanban-components/shared/add-task-modal/add-task-modal.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ContactComponent, AboutComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    ContactComponent,
+    AboutComponent,
+    KanbanBoardProjectComponent,
+    KanbanSingleProjectComponent,
+    ModalPopupComponent,
+    AddTaskModalComponent,
+  ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
     CoreModuleModule,
     NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
-    ToastrModule.forRoot({ closeButton: true, timeOut: 3000, newestOnTop: true, progressBar: true, positionClass: 'toast-bottom-left'})
+    ToastrModule.forRoot({
+      closeButton: true,
+      timeOut: 3000,
+      newestOnTop: true,
+      progressBar: true,
+      positionClass: 'toast-bottom-right',
+    }),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
   ],
   providers: [
     provideClientHydration(),
     provideAnimationsAsync(),
     provideHttpClient(withFetch()),
+    AuthService,
   ],
   bootstrap: [AppComponent],
 })

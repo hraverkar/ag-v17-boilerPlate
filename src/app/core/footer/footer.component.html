@@ -1,26 +1,18 @@
-<mat-toolbar>
-    <mat-toolbar-row>
-        <div>
-            <app-logo></app-logo>
+<nav class="navbar navbar-dark navbar-expand-lg nav-color">
+    <div class="container-fluid">
+        <div> <app-logo></app-logo>
         </div>
-    </mat-toolbar-row>
-    <mat-toolbar-row>
-        <span class="example-spacer"></span>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-            <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-            <mat-icon>share</mat-icon>
-        </button>
-
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"
+            matTooltip="harshal.raverkar@gmail.com" (click)="clickSocialMedia('email')">
             <i class="fa-solid fa-square-envelope"></i>
         </button>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"
+            matTooltip="Linkedin" (click)="clickSocialMedia('linkedin')">
             <i class="fa-brands fa-linkedin"></i>
         </button>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"
+            matTooltip="Github" (click)="clickSocialMedia('github')">
             <i class="fa-brands fa-square-github"></i>
         </button>
-    </mat-toolbar-row>
-</mat-toolbar>
+    </div>
+</nav>

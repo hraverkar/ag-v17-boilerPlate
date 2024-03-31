@@ -1,0 +1,22 @@
+<div class="wrapper">
+    <div class="logo">
+        <img src="../../../assets/logo/logo.png" alt="logo">
+    </div>
+    <div class="text-center mt-4 name">
+        Login
+    </div>
+    <form class="p-3 mt-3" #userlogin="ngForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-field d-flex align-items-center">
+            <input type="text" name="email" id="email" placeholder="Email" [(ngModel)]="formData.email">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <input type="password" name="password" id="pwd" placeholder="Password" [(ngModel)]="formData.password">
+        </div>
+        <button class="btn mt-3" type="submit">Login</button>
+    </form>
+    <button class="btn mt-3" (click)="googleLogin()">
+        <i class="fa-brands fa-google color"></i> Login with Google</button>
+    <div class="text-center fs-6">
+        <a href="#">Forget password?</a> or <a [routerLink]="['/register']" href="#">Sign up</a>
+    </div>
+</div>
