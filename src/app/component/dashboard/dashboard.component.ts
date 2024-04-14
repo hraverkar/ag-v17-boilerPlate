@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { User } from '../../interfaces/user';
+import {user} from "@angular/fire/auth";
 
 @Component({
   selector: 'app-dashboard',
@@ -18,4 +19,6 @@ export class DashboardComponent implements OnInit {
   public fetchData() {
     this.authService.userData as User;
   }
+
+  protected readonly user = user;
 }

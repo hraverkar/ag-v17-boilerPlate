@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { RouterLink } from '@angular/router';
@@ -12,8 +12,31 @@ import { DashboardComponent } from '../../component/dashboard/dashboard.componen
 import { ForgotPasswordComponent } from '../../component/forgot-password/forgot-password.component';
 
 @NgModule({
-  declarations: [NavbarComponent, FooterComponent, LogoComponent, LoginComponent, RegisterComponent,DashboardComponent, ForgotPasswordComponent ],
-  imports: [CommonModule, RouterLink, MaterialModule, FormsModule, ReactiveFormsModule],
-  exports: [NavbarComponent, FooterComponent, LogoComponent, LoginComponent, RegisterComponent, DashboardComponent, ForgotPasswordComponent],
+  declarations: [
+    NavbarComponent,
+    FooterComponent,
+    LogoComponent,
+    LoginComponent,
+    RegisterComponent,
+    DashboardComponent,
+    ForgotPasswordComponent,
+  ],
+  imports: [
+    CommonModule,
+    RouterLink,
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgOptimizedImage,
+  ],
+  exports: [
+    NavbarComponent,
+    FooterComponent,
+    LogoComponent,
+    LoginComponent,
+    RegisterComponent,
+    DashboardComponent,
+    ForgotPasswordComponent,
+  ],
 })
 export class CoreModuleModule {}

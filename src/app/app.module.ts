@@ -24,6 +24,7 @@ import { CommonModule } from '@angular/common';
 import { KanbanSingleProjectComponent } from './kanban-components/kanban-single-project/kanban-single-project.component';
 import { ModalPopupComponent } from './kanban-components/shared/modal-popup/modal-popup.component';
 import { AddTaskModalComponent } from './kanban-components/shared/add-task-modal/add-task-modal.component';
+import { KanbanTaskDetailsComponent } from './kanban-components/kanban-task-details/kanban-task-details.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { AddTaskModalComponent } from './kanban-components/shared/add-task-modal
     KanbanSingleProjectComponent,
     ModalPopupComponent,
     AddTaskModalComponent,
+    KanbanTaskDetailsComponent,
   ],
   imports: [
     CommonModule,

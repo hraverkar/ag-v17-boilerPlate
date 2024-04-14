@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { KanbanService } from '../../services/kanban.service';
 import { ITaskDetailsList } from '../../interfaces/itask-details-response-list';
 import { ITaskDetailsResponse } from '../../interfaces/itask-details-response';
@@ -40,7 +40,8 @@ export class KanbanSingleProjectComponent implements OnInit {
     private kanbanService: KanbanService,
     private spinnerService: NgxSpinnerService,
     private dialog: Dialog,
-    private toastService: ToastrService
+    private toastService: ToastrService,
+    private router: Router
   ) {}
 
   public ngOnInit(): void {
@@ -104,13 +105,15 @@ export class KanbanSingleProjectComponent implements OnInit {
     this.kanbanService
       .GetAllTaskStatus()
       .subscribe((res: ITaskStatusResponse[]) => {
-        this.TaskStatus = res;
+        if (res !== undefined || res !== null) {
+          this.TaskStatus = res;
+        }
       });
   }
-  public taskInProgressStatusDetails;
-  public taskOpenStatusDetails;
-  public taskInReviewStatusDetails;
-  public taskClosedStatusDetails;
+  public taskInProgressStatusDetails: ITaskDetailsResponse[];
+  public taskOpenStatusDetails: ITaskDetailsResponse[];
+  public taskInReviewStatusDetails: ITaskDetailsResponse[];
+  public taskClosedStatusDetails: ITaskDetailsResponse[];
 
   public getTheListOfTaskByStatus(statusName: string): ITaskDetailsResponse[] {
     if (this.TaskDetails !== undefined && this.Count !== 0) {
@@ -199,5 +202,9 @@ export class KanbanSingleProjectComponent implements OnInit {
     this.getTheListOfTaskByStatus(TaskStatusEnum.InProgress);
     this.getTheListOfTaskByStatus(TaskStatusEnum.InReview);
     this.getTheListOfTaskByStatus(TaskStatusEnum.Closed);
+  }
+
+  public onClickTitle(id: string) {
+    this.router.navigate(['/task-details/' + id]);
   }
 }

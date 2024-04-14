@@ -13,12 +13,13 @@
     border-radius: 4px;
     overflow: hidden;
     display: block;
+    border-color: red;
 }
 
 .example-box {
     padding: 20px 10px;
     border-bottom: dashed 1px #ccc;
-    border-color: #004f4f;
+    border-color: red;
     color: rgba(0, 0, 0, 0.87);
     //display: flex;
     flex-direction: row;
@@ -29,6 +30,8 @@
     background: antiquewhite;
     font-size: 14px;
     overflow-wrap: break-word;
+    margin-bottom: 6px;
+
 }
 
 .cdk-drag-preview {
@@ -62,11 +65,17 @@
 .btn-secondary {
     background-color: #004f4f !important;
 }
+
 .example-box-wrapper {
-    margin-bottom: 10px; /* Adjust the value as needed for the desired space between boxes */
+    margin-bottom: 10px;
+    /* Adjust the value as needed for the desired space between boxes */
 }
 
 .close-icon {
     cursor: pointer;
-    color:red;
+    color: red;
+}
+
+.clickStyle {
+    cursor: pointer;
 }

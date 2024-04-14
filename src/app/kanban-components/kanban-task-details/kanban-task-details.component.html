@@ -1,0 +1,41 @@
+<div class="scrollable-container">
+    <section class="bg-light pt-3 pb-5 shadow-sm">
+        <div class="container">
+            <div class="row pt-3">
+                <div class="col-12">
+                    <h3 class="text-uppercase border-bottom mb-4">Task Details</h3>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    {{TaskDetails.taskTitle}}
+                </li>
+
+                <li>
+                    {{TaskDetails.taskDetail}}
+                </li>
+
+                <li>
+                    {{TaskDetails.taskStatus.statusName}}
+                </li>
+
+                <li>
+                    {{TaskDetails.project.projectName}}
+                </li>
+
+                <li>
+                    {{TaskDetails.project.projectDescription}}
+                </li>
+
+                <li>
+                    {{TaskDetails.taskCreatedBy}}
+                </li>
+
+                <li>
+                    {{TaskDetails.taskAssignTo}}
+                </li>
+
+            </ul>
+        </div>
+    </section>
+</div>

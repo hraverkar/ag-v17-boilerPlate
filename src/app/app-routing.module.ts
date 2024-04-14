@@ -9,6 +9,7 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { AuthGuard } from './guards/auth.guard';
 import { KanbanBoardProjectComponent } from './kanban-components/kanban-board-project/kanban-board-project.component';
 import { KanbanSingleProjectComponent } from './kanban-components/kanban-single-project/kanban-single-project.component';
+import { KanbanTaskDetailsComponent } from './kanban-components/kanban-task-details/kanban-task-details.component';
 
 const routes: Routes = [
   {
@@ -56,6 +57,11 @@ const routes: Routes = [
     path: 'project/:id',
     component: KanbanSingleProjectComponent,
     title: 'Kanban Board - Project'
+  },
+  {
+    path: 'task-details/:id',
+    component: KanbanTaskDetailsComponent,
+    title: 'Kanban Board - Task Details'
   },
 ];
 

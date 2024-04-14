@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import {
-  ActivatedRouteSnapshot,
-  RouterStateSnapshot,
   Router,
   UrlTree,
 } from '@angular/router';
@@ -20,7 +18,7 @@ export class AuthGuard {
     | boolean
     | UrlTree {
     if (this.authService.isLoggedIn !== true) {
-      return this.router.createUrlTree(['login']); // Navigate to login and return UrlTree
+      return this.router.createUrlTree(['login']); // Navigate to log in and return UrlTree
     }
     return true;
   }
